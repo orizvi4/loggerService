@@ -15,11 +15,11 @@ const logger = bunyan.createLogger({
 
 @Injectable()
 export class LoggerService {
-    logInfo(message, elasticIndex): void {
+    logInfo(message: string, elasticIndex: string): void {
         logger.info({elasticIndex: elasticIndex, category: 'code'}, message);
     }
 
-    logError(message, elasticIndex, category) {
+    logError(message: string, elasticIndex: string, category: string) {
         logger.error({elasticIndex: elasticIndex, category: category}, message);
     }
 }
